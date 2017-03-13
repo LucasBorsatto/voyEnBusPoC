@@ -1,0 +1,11 @@
+<md-card>
+  <md-input-container>
+    <input placeholder="Su parada..." type="text" mdInput [formControl]="myControl" [mdAutocomplete]="auto">
+  </md-input-container>
+
+  <md-autocomplete #auto="mdAutocomplete" [displayWith]="displayFn">
+    <md-option *ngFor="let stop of filteredOptions | async" [value]="stop.nombre">
+      {{ stop.nombre }}
+    </md-option>
+  </md-autocomplete>
+</md-card>
